@@ -1,6 +1,6 @@
 [submodule "scannerConfig"]
 	path = scannerConfig
-	url = ssh://biobank@kingman.cs.ualberta.ca/compsci/abee13/cshome/biobank/gitrepo/scannerConfig.git
+	url = ssh://biobank@aicml-med.cs.ualberta.ca/home/biobank/gitrepo/scannerConfig.git
 [submodule "bioSampleScan"]
 	path = bioSampleScan
-	url = ssh://biobank@kingman.cs.ualberta.ca/compsci/abee13/cshome/biobank/gitrepo/BioSampleScan.git
+	url = ssh://biobank@aicml-med.cs.ualberta.ca/home/biobank/gitrepo/BioSampleScan.git
