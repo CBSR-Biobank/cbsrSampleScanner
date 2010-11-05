@@ -18,7 +18,7 @@ if($#ARGV == 1){
         $NSIS_DIR =~ s/\/$//;
 }
 else{
-        print "Usuage: createInstaller.pl ExportedEclipseProjectDirectory nsisConfigurationDirectory\n";
+        print "Usage: createInstaller.pl ExportedProject nsisConfigurationDirectory\n";
         exit 0;
 }
 print "\n";
