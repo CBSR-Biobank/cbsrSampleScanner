@@ -1,22 +1,10 @@
 \chapter{Overview}
-The BioBank2 Java Client is designed to be a client application that connects
-to a BioBank2 server that provides services for storing inventory information
-for biological samples. More than one client can connect to the server at the
-same time. The client is a software application that runs on Microsoft Windows
-and Linux\footnote{The scanner cannot be used when using the application on
-  Linux.}. The client software is a Java application and requires that a Java
-JRE or JDK be installed on the computer. The installation program for the
-client installs a Java JRE if it is not already present on the computer.
-
-When running on Microsoft Windows, the client can communicate with scanners
-that use either TWAIN\footnote{\url{http://en.wikipedia.org/wiki/TWAIN}} or
+The CBSR Sample Scanner is a Microsoft Windows application that decodes
+DataMatrix encoded tubes to be decoded. It communicates with a scanner that
+uses either TWAIN\footnote{\url{http://en.wikipedia.org/wiki/TWAIN}} or
 WIA\footnote{\url{http://en.wikipedia.org/wiki/Windows_Image_Acquisition}}
 drivers. Most scanners available on the market provide these
-drivers. Therefore, most scanners work with the client software.
-
-The client does not store any inventory information on the computer that it
-runs on. All the information is stored on the server. Any client connecting to
-this server will be able to see all the information on the server.
+drivers.
 
 Figure \ref{fig:main_window} shows the application's main window and highlights
 some of its components.
@@ -24,7 +12,7 @@ some of its components.
   \centering
   \scalebox{0.4}
 	   { \includegraphics*{screenshots/overview/main_window} }
-	   \caption{The Java Client's main window.}
+	   \caption{The CBSR Sample Scanner's main window.}
 	   \label{fig:main_window}
 \end{figure}
 \begin{description}
