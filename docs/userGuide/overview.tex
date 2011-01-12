@@ -1,55 +1,96 @@
 \chapter{Overview}
 The CBSR Sample Scanner is a Microsoft Windows application that decodes
-DataMatrix encoded tubes to be decoded. It communicates with a scanner that
+DataMatrix encoded tubes. It communicates with a scanner that
 uses either TWAIN\footnote{\url{http://en.wikipedia.org/wiki/TWAIN}} or
 WIA\footnote{\url{http://en.wikipedia.org/wiki/Windows_Image_Acquisition}}
 drivers. Most scanners available on the market provide these
 drivers.
 
+Up to 5 pallets can be scanned and decoded at a time. The product IDs of
+decoded pallets can be saved to individual files that specify the pallet
+product ID and the date and time the scan was performed at. Files are saved in
+Comma Separated Value (CSV) format which is a plain text format or can be
+imported in to Microsoft Excel.
+
 Figure \ref{fig:main_window} shows the application's main window and highlights
-some of its components.
+some of its components. This figure shows the application when it is configured
+to scan a single pallet.
 \begin{figure}[H]
   \centering
-  \scalebox{0.4}
+  \scalebox{0.35}
 	   { \includegraphics*{screenshots/overview/main_window} }
 	   \caption{The CBSR Sample Scanner's main window.}
 	   \label{fig:main_window}
 \end{figure}
-\begin{description}
-\item[Window Title Bar] The title bar shows the connection information when
-  connected to a BioBank2 server. The domain name or IP address of the server
-  is displayed and in square brackets the user name that was used to log in.
-\item[Main Menu] The main menu allows the user access to the different
+\begin{enumerate}
+\item The \emph{Main Menu} allows the user access to the different
   functions provided by the software (see section \ref{sec:main_menu} for a
   description of the menu items).
-\item[Toolbar Icons] The icon buttons in the toolbar allow quick access to
-  often used menu items. Using the mouse, the user can hover over the icon
-  button and after 2 seconds a tooltip is displayed describing what the
-  button is for and if applicable the keyboard shortcut. Note that there is
-  an icon toolbar under the Main Menu and another grouped with the tree view.
-\item[Tree View] The tree view shown here is for the \emph{Administration
-  View}. The application uses tree views in the \emph{Administration View}
-  and \emph{Processing View} (see section \ref{sec:application_views}). Tree
-  view shows nodes in a hierarchical structure. If a node has children, a
-  \emph{plus} symbol is displayed next to the node. When the symbol is
-  pressed the node will expand to show its' child nodes.  Sometimes,
-  operations can be performed on certain nodes in the tree by right clicking
-  with the mouse on the node.
-\item[Status Bar] The status bar is used to display the current state of the
+\item The product barcode of the pallet to be scanned. This product ID is
+  used in the output file.
+\item The \emp{Decoding Profile} to be used. Scanning profiles are described in
+  detail in section \ref{sec:decoding_profiles}.
+\item This part of the window shows the decoded product IDs of the tubes
+  that were decoded for each pallet.
+\item The status bar is used to display the current state of the
   application. It is usually updated after the user has completed a task.
-\end{description}
+\end{enumerate}
 
 \section{Main Menu}
 \label{sec:main_menu}
+\subsection{File Menu}
+The items under the \emph{File Menu} allow the user to create new scan tabs
+and save individual decoded pallets to a file.
+\begin{figure}[H]
+  \centering
+  \scalebox{0.5}
+	   { \includegraphics*{screenshots/overview/file_menu} }
+	   \caption{File menu.}
+	   \label{fig:file_menu}
+\end{figure}
+\begin{description}
+\item[New Scan] Use this menu item to clear the contents of the current
+  scanning tabs.
+\item[New Tab] Creates a new scanning tab. Multiple scanning tabs can be used
+  to keep decode information easily accessible.
+\item[Save All] Saves to file all scanned pallets on the current tab.
+\item[Save] Used to save to file one of the scanned pallets on the current tab.
+\item[Quit] Used to quit the application.
+\end{description}
 
-\subsection{}
+\subsection{Scanner Menu}
+Allows the user to save scanned images to file.
+\begin{figure}[H]
+  \centering
+  \scalebox{0.5}
+	   { \includegraphics*{screenshots/overview/scanner_menu} }
+	   \caption{Scanner menu.}
+	   \label{fig:scanner_menu}
+\end{figure}
+\begin{description}
+\item[Scan Image To File] Scans the entire flatbed and saves it to a file in MS
+  Windows BMP format.
+\item[Scan Pallet to File] Scans the image from a pallet to a file.
+\end{description}
+
 \subsection{Configuration Menu}
 This menu only contains the preferences item. See Chapter
 \ref{chap:configuration} for more details.
 \begin{figure}[H]
   \centering
   \scalebox{0.5}
-	   { \includegraphics*{screenshots/overview/main_menu_configuration} }
+	   { \includegraphics*{screenshots/overview/configuration_menu} }
 	   \caption{Configuration menu.}
-	   \label{fig:main_menu_configuration}
+	   \label{fig:configuration_menu}
+\end{figure}
+
+\subsection{Help Menu}
+The only item under this menu is the \emph{About} item. When selected it
+displays a dialog containing the application's version number.
+\begin{figure}[H]
+  \centering
+  \scalebox{0.5}
+	   { \includegraphics*{screenshots/overview/about_dialog} }
+	   \caption{About dialog.}
+	   \label{fig:about_dialog}
 \end{figure}
