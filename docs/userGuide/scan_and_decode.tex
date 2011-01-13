@@ -1,8 +1,6 @@
 \chapter{Scanning and Decoding}
+This chapter discusses how to use the application for scanning and decoding.
 
-The first time the application is run a pallet must be configured prior to
-scanning and decoding pallets. Please see chapter \ref{chap:configuration} for
-instructions on how to configure one or more pallets.
 \begin{figure}[H]
   \centering
   \scalebox{0.35}
@@ -16,6 +14,8 @@ screen will show a decode resutls table for each pallet that is enabled.
 
 To scan one or more pallets follow these steps:
 \begin{enumerate}
+\item If this is the first time using the application please configure at least
+  one pallet \textbf{plate} (see section \ref{sec:plate_positions}) .
 \item Select the scanning profile to be used. Leave the selection on \emph{All}
   if none have been defined.
 \item Enter the pallet barcodes into the pallet barcode text boxes. A USB
@@ -54,4 +54,65 @@ To scan one or more pallets follow these steps:
   clear the product ID text boxes and start scanning a new pallet.
 \end{enumerate}
 
+\section{Error Checking}
+To avoid human error, the application remembers the product IDs of the pallets
+that have been previously scanned. If it detects a duplicate product ID, the
+application will display the dialog box shown in figure
+\ref{fig:duplicate_pallet_id}.
+\begin{figure}[H]
+  \centering
+  \scalebox{0.35}
+	   { \includegraphics*{screenshots/scan_and_decode/duplicate_pallet_id_dialog} }
+	   \caption{Warning dialog displayed when a duplicate pallet ID detected.}
+	   \label{fig:duplicate_pallet_id}
+\end{figure}
+You are given the option of continuing to scan the pallet or cancel the
+scan. If more than one plate is enabled, the other pallets will be decoded.
+
 \section{Multiple Tabs}
+The application has the ability to display decode information on mutiple
+tabs. This may be useful when decoding many pallets and the user wishes to keep
+the information displayed on the screen. The user can quickly switch between
+the two windows by clicking on their corresponding tabs.
+\begin{figure}[H]
+  \centering
+  \scalebox{0.35}
+	   { \includegraphics*{screenshots/scan_and_decode/multiple_tabs} }
+	   \caption{Main window with multiple tabs.}
+	   \label{fig:multiple_tabs}
+\end{figure}
+The tab's name displays the date and time that it was created.
+
+Tab's can also be rearranged by clicking on the tab and dragging it. Figure
+\ref{fig:split_tabs} shows two tabs split horizontally. This was done by
+clicking and dragging the tab down the window until the icon under the mouse
+changes to a down arrow.
+\begin{figure}[H]
+  \centering
+  \scalebox{0.35}
+	   { \includegraphics*{screenshots/scan_and_decode/split_tabs} }
+	   \caption{Split tabs.}
+	   \label{fig:split_tabs}
+\end{figure}
+
+Note that a tab can be closed at any time by pressing the \textbf{X} on the tab
+title. The tab's context menu is shown when you right click on the tab's title.
+\begin{figure}[H]
+  \centering
+  \scalebox{0.35}
+	   { \includegraphics*{screenshots/scan_and_decode/tab_context_menu} }
+	   \caption{A tab's context menu (right click on the tab title).}
+	   \label{fig:tab_context_menu}
+\end{figure}
+
+The functions of the items in this menu are as follows:
+\begin{description}
+\item [Move] Move the tab as to display two tabs side by side either vertically
+  or horizontally. This is the same as clicking on the tab and dragging it.
+\item [Size] Used for resizing the tab.
+\item [Close] Closes the tab.
+\item [Close Others] Closes all tabs except this one.
+\item [Close All]  Closes all tabs. If this is done a new tab can be created by
+  selecting \texttt{File $\to$ New Tab}.
+\item [New Editor] Creates a new tab.
+\end{description}
