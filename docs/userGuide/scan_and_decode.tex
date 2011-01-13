@@ -1,0 +1,57 @@
+\chapter{Scanning and Decoding}
+
+The first time the application is run a pallet must be configured prior to
+scanning and decoding pallets. Please see chapter \ref{chap:configuration} for
+instructions on how to configure one or more pallets.
+\begin{figure}[H]
+  \centering
+  \scalebox{0.35}
+	   { \includegraphics*{screenshots/scan_and_decode/main_window} }
+	   \caption{Application main window.}
+	   \label{fig:main_window_2}
+\end{figure}
+Figure \ref{fig:main_window_2} shows the application when it is configured to
+scan a single pallet. When more pallets are configured the bottom part of the
+screen will show a decode resutls table for each pallet that is enabled.
+
+To scan one or more pallets follow these steps:
+\begin{enumerate}
+\item Select the scanning profile to be used. Leave the selection on \emph{All}
+  if none have been defined.
+\item Enter the pallet barcodes into the pallet barcode text boxes. A USB
+  barcode scanner can be used to enter this text into the text boxes.
+\item Press the \fbox{Scan Selected} button. Note that only the pallets with
+  text in the product ID text box will be scan and decoded.
+\item The scanning and decoding progress dialogs will be displayed as shown in
+  figure \ref{fig:progress_dialogs}.
+\begin{figure}[H]
+  \centering
+  \scalebox{0.35}
+	   { \includegraphics*{screenshots/scan_and_decode/progress_dialogs} }
+	   \caption{Progress dialog boxes shown while scanning and decoding a pallet.}
+	   \label{fig:progress_dialogs}
+\end{figure}
+\item When the scan and decode is done the result may be missing one or more
+  tubes. In this case press the \fbox{Re-Scan Selected} button to scan and
+  decode again. The second scan and decode aggregates information to the
+  previous scan and decodes. Figure \ref{fig:scan_missed_tube} shows that the
+  tube at position A1 was missed because that cell in the table is
+  empty. Re-scan can be attempted multiple times.
+\begin{figure}[H]
+  \centering
+  \scalebox{0.35}
+	   { \includegraphics*{screenshots/scan_and_decode/scan_missed_tube} }
+	   \caption{Decode with missed tubes.}
+	   \label{fig:scan_missed_tube}
+\end{figure}
+\item Once a pallet is successfully scanned the information can be saved to a
+  file using the \texttt{File $\to$ Save All} menu item. If you only want to
+  save a single pallet result the use the \texttt{File $\to$ Save $\to$ Pallet
+    \emph{x}} menu item. The files are saved with the following name
+  \texttt{\textbf{<pallet\_product\_barcode>}\_\textbf{<date\_time>}.csv} to
+  the folder of your choice.
+\item Once all files have been saved, press the \fbox{Clear Selected} button to
+  clear the product ID text boxes and start scanning a new pallet.
+\end{enumerate}
+
+\section{Multiple Tabs}
