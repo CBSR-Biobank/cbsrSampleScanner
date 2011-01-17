@@ -9,11 +9,11 @@ The configuration settings for the Java Client can be found by selecting
       \caption{Configuration preferences dialog box.}
       \label{fig:preferences_dialog}
     \end{figure}
-A configuration page can be selected by clicking on a node on the
-tree on the left hand side of the dialog box. The \texttt{filter text} box, see
-arrow labelled \emph{1} in figure \ref{fig:preferences_dialog}, can
-be used to quickly find a configuration page by typing the name of the page in
-whole or in part.
+A configuration page can be selected by clicking on a node on the tree on the
+left hand side of the dialog box (labelled \emph{2} in figure
+\ref{fig:preferences_dialog}). The \texttt{filter text} box (labelled \emph{1})
+can be used to quickly find a configuration page by typing the name of the page
+in whole or in part.
 
 The following sections discuss the configuration pages in detail.
 
@@ -91,6 +91,7 @@ DataMatrix 2D barcodes.
 \end{description}
 
 \subsection{Decoding Profiles}
+\label{sec:decoding_profiles}
 On the preferences dialog window, if there is a "plus" symbol next to the
 \emph{Scanning and Decoding} node, press it to expand the sub tree.
 
@@ -122,6 +123,10 @@ To create a new profile follow these instructions:
 \end{enumerate}
 
 \subsection{Plate Positions}
+\label{sec:plate_positions}
+A plate is the region on the flatbed that is used to scan a pallet. Plate 1
+corresponds to Pallet 1 and so on.
+
 On the preferences dialog window, if there is a "plus" symbol next to the
 \emph{Scanning and Decoding} node, press it to expand the sub tree.
     \begin{figure}[H]
@@ -166,7 +171,7 @@ To define a pallet scanning region do the following:
     \emph{Cell Gap}).
     \begin{figure}[H]
       \centering
-      \scalebox{0.5}
+      \scalebox{0.75}
       { \includegraphics*{screenshots/configuration/plate1_grid_ready} }
       \caption{Grid aligned with tubes.}
       \label{fig:plate1_grid_ready}
@@ -191,21 +196,4 @@ Note that cell A1 should be at the \emph{Top Left} when configuring a plate in
 orientation when looking down at the scanner's flatbed.
 
 To test if your configuration will yield valid decodes use the
-\texttt{Scanner -> Decode Plate} from the main menu.
-\subsection{Plate Barcodes}
-To speed up processing of samples, a handheld barcode scanner can be used to
-quickly enter information into the application. Barcodes with the corresponding
-words can be printed and then scanned when required by the application (See
-sections \ref{sec:scan_link} and \ref{sec:scan_assign}). The \textbf{Plate
-  \emph{x} barcode} settings contain the text encoded into these barcodes when
-they were created.
-    \begin{figure}[H]
-      \centering
-      \scalebox{0.45}
-      { \includegraphics*{screenshots/configuration/prefs_plate_barcodes} }
-      \caption{Plate barcode preferences.}
-      \label{fig:prefs_plate_barcodes}
-    \end{figure}
-
-
-
+\texttt{Scanner $\to$ Decode Plate} from the main menu.

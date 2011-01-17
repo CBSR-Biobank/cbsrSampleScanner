@@ -1,67 +1,100 @@
 \chapter{Overview}
-The BioBank2 Java Client is designed to be a client application that connects
-to a BioBank2 server that provides services for storing inventory information
-for biological samples. More than one client can connect to the server at the
-same time. The client is a software application that runs on Microsoft Windows
-and Linux\footnote{The scanner cannot be used when using the application on
-  Linux.}. The client software is a Java application and requires that a Java
-JRE or JDK be installed on the computer. The installation program for the
-client installs a Java JRE if it is not already present on the computer.
-
-When running on Microsoft Windows, the client can communicate with scanners
-that use either TWAIN\footnote{\url{http://en.wikipedia.org/wiki/TWAIN}} or
+The CBSR Sample Scanner is a Microsoft Windows application that decodes
+DataMatrix encoded 1.0 ml or 0.5 ml tubes inserted into NUNC 96 well plates. It
+communicates with a scanner that uses either
+TWAIN\footnote{\url{http://en.wikipedia.org/wiki/TWAIN}} or
 WIA\footnote{\url{http://en.wikipedia.org/wiki/Windows_Image_Acquisition}}
-drivers. Most scanners available on the market provide these
-drivers. Therefore, most scanners work with the client software.
+drivers. Most scanners available on the market provide these drivers.
 
-The client does not store any inventory information on the computer that it
-runs on. All the information is stored on the server. Any client connecting to
-this server will be able to see all the information on the server.
+Up to 5 pallets can be scanned and decoded at a time. The product IDs of
+decoded pallets can be saved to individual files that specify the pallet
+product ID and the date and time the scan was performed. Files are saved in
+Comma Separated Value (CSV) format which is a plain text format or can be
+imported in to Microsoft Excel.
 
 Figure \ref{fig:main_window} shows the application's main window and highlights
-some of its components.
+some of its components. This figure shows the application when it is configured
+to scan a single pallet.
 \begin{figure}[H]
   \centering
-  \scalebox{0.4}
+  \scalebox{0.35}
 	   { \includegraphics*{screenshots/overview/main_window} }
-	   \caption{The Java Client's main window.}
+	   \caption{The CBSR Sample Scanner's main window.}
 	   \label{fig:main_window}
 \end{figure}
 \begin{description}
-\item[Window Title Bar] The title bar shows the connection information when
-  connected to a BioBank2 server. The domain name or IP address of the server
-  is displayed and in square brackets the user name that was used to log in.
-\item[Main Menu] The main menu allows the user access to the different
-  functions provided by the software (see section \ref{sec:main_menu} for a
-  description of the menu items).
-\item[Toolbar Icons] The icon buttons in the toolbar allow quick access to
-  often used menu items. Using the mouse, the user can hover over the icon
-  button and after 2 seconds a tooltip is displayed describing what the
-  button is for and if applicable the keyboard shortcut. Note that there is
-  an icon toolbar under the Main Menu and another grouped with the tree view.
-\item[Tree View] The tree view shown here is for the \emph{Administration
-  View}. The application uses tree views in the \emph{Administration View}
-  and \emph{Processing View} (see section \ref{sec:application_views}). Tree
-  view shows nodes in a hierarchical structure. If a node has children, a
-  \emph{plus} symbol is displayed next to the node. When the symbol is
-  pressed the node will expand to show its' child nodes.  Sometimes,
-  operations can be performed on certain nodes in the tree by right clicking
-  with the mouse on the node.
-\item[Status Bar] The status bar is used to display the current state of the
-  application. It is usually updated after the user has completed a task.
+\item[Main Menu] (labelled \emph{1}) Allows the user access to the
+  different functions provided by the software (see section \ref{sec:main_menu}
+  for a description of the menu items).
+\item [Pallet Product IDs] (labelled \emph{2}) The product ID of the of the
+  pallets to be scanned. This product ID is used in the output file. These text
+  boxes are enabled or disabled based on which plates are enabled in the
+  preferences.
+\item [Decoding Profile] (labelled \emph{3}) Scanning profiles control which
+  tubes on the pallet will be decoded. Profiles are described in detail in
+  section \ref{sec:decoding_profiles}.
+\item [Decode Results] (labelled \emph{4}) This part of the window shows the
+  decoded product IDs of the tubes that were decoded for each pallet.
+\item [Status Bar] (labelled \emph{5}) The status bar is used to display the
+  current state of the application. It is usually updated after the user has
+  completed a task.
 \end{description}
 
 \section{Main Menu}
 \label{sec:main_menu}
+\subsection{File Menu}
+The items under the \emph{File Menu} allow the user to create new scan tabs
+and save individual decoded pallets to a file.
+\begin{figure}[H]
+  \centering
+  \scalebox{0.5}
+	   { \includegraphics*{screenshots/overview/file_menu} }
+	   \caption{File menu.}
+	   \label{fig:file_menu}
+\end{figure}
+\begin{description}
+\item[New Scan] Use this menu item to clear the contents of the current
+  scanning tabs.
+\item[New Tab] Creates a new scanning tab. Multiple scanning tabs can be used
+  to keep decode information easily accessible.
+\item[Save All] Saves to file all scanned pallets on the current tab.
+\item[Save] Used to save to file one of the scanned pallets on the current tab.
+\item[Quit] Used to quit the application.
+\end{description}
 
-\subsection{}
+\subsection{Scanner Menu}
+Allows the user to save scanned images to file.
+\begin{figure}[H]
+  \centering
+  \scalebox{0.5}
+	   { \includegraphics*{screenshots/overview/scanner_menu} }
+	   \caption{Scanner menu.}
+	   \label{fig:scanner_menu}
+\end{figure}
+\begin{description}
+\item[Scan Image To File] Scans the entire flatbed and saves it to a file in MS
+  Windows BMP format.
+\item[Scan Pallet to File] Scans the image from a pallet to a file.
+\end{description}
+
 \subsection{Configuration Menu}
 This menu only contains the preferences item. See Chapter
 \ref{chap:configuration} for more details.
 \begin{figure}[H]
   \centering
   \scalebox{0.5}
-	   { \includegraphics*{screenshots/overview/main_menu_configuration} }
+	   { \includegraphics*{screenshots/overview/configuration_menu} }
 	   \caption{Configuration menu.}
-	   \label{fig:main_menu_configuration}
+	   \label{fig:configuration_menu}
+\end{figure}
+
+\subsection{Help Menu}
+The only item under this menu is the \emph{About} item. When selected it
+displays a dialog containing the application's version number.
+\begin{figure}[H]
+  \centering
+  \scalebox{0.5}
+	   { \includegraphics*{screenshots/overview/about_dialog} }
+	   \caption{About dialog.}
+	   \label{fig:about_dialog}
 \end{figure}
